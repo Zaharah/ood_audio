@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>On Out-of-Distribution Detection for Audio with Deep Nearest Neighbors</title>
+      <meta name="description" content="On Out-of-Distribution Detection for Audio with Deep Nearest Neighbors">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+      <link href="css/theme.css" rel="stylesheet">
+   </head>
+   <body>
+      <section id="header">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10">
+                  <h1 id="page-title">On Out-of-Distribution Detection for Audio with Deep Nearest Neighbors</h1>
+                  <h3>Zaharah Bukhsh<sup>+</sup>, Aaqib Saeed<sup>*</sup></h3>
+                  <h6><sup>+</sup>Eindhoven University of Technology, <sup>*</sup>Philips Research</h6>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section class = "abstract_section">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10">
+                  <h2><b>We propose a simple and flexible method for detecting out-of-distribution inputs across a broad category of audio (and speech) tasks.</b></h2>
+                  <p><a class="btn btn-default" href="https://arxiv.org/pdf/2210.15283.pdf">Read The Paper</a></p>
+                  <h2>Abstract</h2>
+                  <p>
+                     Out-of-distribution (OOD) detection is concerned with identifying data points that do not belong to the same distribution as the model's training data. For the safe deployment of predictive models in a real-world environment, it is critical to avoid making confident predictions on OOD inputs as it can lead to potentially dangerous consequences. However, OOD detection largely remains an under-explored area in the audio (and speech) domain. This is despite the fact that audio is a central modality for many tasks, such as speaker diarization, automatic speech recognition, and sound event detection. To address this, we propose to leverage feature-space of the model with deep k-nearest neighbors to detect OOD samples. We show that this simple and flexible method effectively detects OOD inputs across a broad category of audio (and speech) datasets. Specifically, it improves the false positive rate (FPR@TPR95) by 17% and the AUROC score by 7% than other prior techniques.
+                  </p>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section>
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10">
+                  <h2>OOD Detection with Deep k-Nearest Neighbor</h2>
+                  <p>We leverage nearest neighbor distance centered on a non-parametric approach without making strong distributional assumptions regarding underlying embedding space. 
+                     To identify OOD samples, we extract embedding for a test input, compute its distance to k-nearest neighbors in the training set
+                     and use a threshold to flag the input.
+                  </p>
+                  <table>
+                     <tr>
+                        <td colspan="2" style="text-align:center">
+                           <img src="img/oda_overview.svg" style="width:90%"/>
+                           <p class="figure-caption">Overview of the deep k-nearest neighbors approach for leveraging embedding space to detect out-of-distribution samples.</p>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </section><br>
+      <section>
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10">
+                  <h2>Key Results</h2>
+                  <p>We demonstrate the effectiveness of our approach on a broad range of audio recognition tasks and different neural network architectures and provide an extensive comparison with both recent and classical approaches as baselines.</p>
+               </div>
+               
+               <div class="col-lg-10">
+                  <div class="col-lg-10 img-style">
+                     <p class="figure-caption">Table 1. OOD detection results in comparison with other strong approaches on different audio datasets. 
+                        All results are based on a MobileNet (YAMNet) model trained only on ID data (i.e., MSWC (Micro-EN) and Vocalsound). ↑ and ↓ indicate larger
+                        and smaller values are better, respectively. All values are percentages.</p>
+                     <img src="img/main_results.PNG" style="width:90%">
+                 </div>
+                 <br><br>
+                 <div class="col-lg-10 img-style">
+                     <img src="img/distance_distribution.PNG" style="width:50%">
+                     <p class="figure-caption">Figure 1. Distribution of the kNN distance with the normalized
+                        features from MobileNet. The ID data is MSWC (Micro-EN).</p>
+                  </div>
+                  <div class="col-lg-10 img-style">
+                     <p class="figure-caption">Table 2. OOD detection results on EfficientNet-B0 architecture.</p>
+                     <img src="img/efficient_net.PNG" style="width:60%">
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section><br>
+      <section>
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10">
+                  <h2>Citation</h2>
+                  <p style="text-align: justify;">Bukhsh, Zaharah, and Aaqib Saeed. "On Out-of-Distribution Detection for Audio with Deep Nearest Neighbors." arXiv preprint arXiv:2210.15283 (2022).</p>
+                  <h3>BibTeX</h3>
+                  <pre>@article{bukhsh2022out,
+   title={On Out-of-Distribution Detection for Audio with Deep Nearest Neighbors},
+   author={Bukhsh, Zaharah and Saeed, Aaqib},
+   journal={arXiv preprint arXiv:2210.15283},
+   year={2022}
+}</pre>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section>
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10">
+                  <p class="text-muted small"></p>
+               </div>
+            </div>
+         </div>
+      </section>
+      <footer>
+         <div class="container">
+            <div class="text-center">
+               <p>Copyright &#169 Zaharah Bukhsh 2022.</p>
+            </div>
+         </div>
+      </footer>
+   </body>
+</html>
