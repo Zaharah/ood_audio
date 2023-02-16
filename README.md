@@ -11,10 +11,8 @@ We provide an example of running an OOD detection with Deep-kNN.
 
 #### 1. Installation
 Install required packages:
-```
 [Tensorflow](https://www.tensorflow.org/install)
 [FAISS](https://github.com/facebookresearch/faiss/blob/main/INSTALL.md)
-```
 
 #### 2. Extract features with a pretrained model (Optional): 
 The pretrained MobileNet (YAMNet) models are available from [this](https://drive.google.com/drive/folders/1bJTq2AyXUv_Ol59ce0n5JJ-zcxTh1se5?usp=share_link) link. Download and put them under `models` directory.
