@@ -11,7 +11,9 @@ We provide an example of running an OOD detection with Deep-kNN.
 
 #### 1. Installation
 Install required packages:
+
 [Tensorflow](https://www.tensorflow.org/install)
+
 [FAISS](https://github.com/facebookresearch/faiss/blob/main/INSTALL.md)
 
 #### 2. Extract features with a pretrained model (Optional): 
